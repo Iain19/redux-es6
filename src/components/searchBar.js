@@ -1,8 +1,22 @@
 import React, {Component} from 'react';
 
 class SearchBar extends Component {
+    constructor(props) {
+        super(props); // call parent's class constructor method
+
+        this.state = {
+            term: ''
+        };
+    }
+
     render() {
-        return <input/>;
+        return (
+            <div>
+                <input
+                    value={this.state.term}
+                    onChange={event => this.setState({term: event.target.value})} />
+            </div>
+        );
     }
 }
 
